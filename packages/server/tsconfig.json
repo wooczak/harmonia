@@ -1,0 +1,17 @@
+{
+    "extends": "../../tsconfig.json", // This config extends the parent config
+    "compilerOptions": {
+      "rootDir": ".",
+      "outDir": "./dist",
+      "baseUrl": ".",
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "composite": true, // Needs to be enabled for referenced projects
+      "allowJs": false,
+      "declaration": true,
+      "declarationMap": true,
+      "allowSyntheticDefaultImports": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+  }

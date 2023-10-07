@@ -1,0 +1,14 @@
+{
+  "name": "@harmonia/client",
+  "version": "0.0.1",
+  "description": "A front-end package for Harmonia app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kacper Łuczak",
+  "license": "ISC",
+  "dependencies": {
+    "@harmonia/server": "^0.0.1"
+  }
+}
