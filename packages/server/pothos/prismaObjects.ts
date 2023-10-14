@@ -1,0 +1,1 @@
+// https://pothos-graphql.dev/docs/plugins/prisma#creating-types-with-builderprismaobject
