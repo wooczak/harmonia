@@ -29,7 +29,7 @@
         "path": "packages/client"
       },
       {
-        "path": "packages/server"
+        "path": "packages/prisma"
       }
     ],
     "exclude": ["node_modules", "dist", "*.d.ts"]
