@@ -1,12 +1,20 @@
 {
-  "name": "@harmonia/server",
+  "name": "@harmonia/graphql-server",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "devDependencies": {},
+  "main": "index.ts",
   "scripts": {
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kacper Łuczak",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^4.9.4"
+  },
+  "devDependencies": {
+    "prisma": "^5.4.2"
+  }
 }

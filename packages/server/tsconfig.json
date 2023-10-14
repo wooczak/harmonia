@@ -1,17 +1,18 @@
 {
     "extends": "../../tsconfig.json", // This config extends the parent config
     "compilerOptions": {
-      "rootDir": ".",
-      "outDir": "./dist",
-      "baseUrl": ".",
-      "sourceMap": true,
-      "resolveJsonModule": true,
-      "composite": true, // Needs to be enabled for referenced projects
-      "allowJs": false,
-      "declaration": true,
-      "declarationMap": true,
-      "allowSyntheticDefaultImports": true
-    },
+        "esModuleInterop": true,
+        "lib": ["es2020"],
+        "module": "es2022",
+        "preserveConstEnums": true,
+        "moduleResolution": "node",
+        "composite": true,
+        "strict": true,
+        "sourceMap": true,
+        "target": "es2022",
+        "types": ["node"],
+        "outDir": "dist"
+      },
     "include": ["src/**/*"],
     "exclude": ["node_modules", "dist"]
   }
