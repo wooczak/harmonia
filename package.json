@@ -6,6 +6,8 @@
   "scripts": {
     "server:graphql": "cd packages/server/src && ts-node-esm index.ts",
     "server:prismastudio": "cd packages/server && npx prisma studio",
+    "prisma:migrate": "cd packages/server && npx prisma migrate dev",
+    "prisma:generate": "cd packages/server && npx prisma generate",
     "server": "concurrently \"npm run server:graphql\" \"npm run server:prismastudio\"",
     "build": "tsc -b",
     "test": "echo \"Error: no test specified\" && exit 1"

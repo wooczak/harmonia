@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { Prisma, Patient, Doctor } from "/Users/kacper/Desktop/harmonia/node_modules/@prisma/client";
+import type { Prisma, Patient, Doctor } from "C:\\Users\\48696\\Desktop\\kacper\\harmonia\\node_modules\\@prisma\\client";
 export default interface PrismaTypes {
     Patient: {
         Name: "Patient";

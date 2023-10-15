@@ -1,14 +1,24 @@
+import { PrismaClient } from "@prisma/client";
 import builder from "./builder";
+
+const prisma = new PrismaClient();
 
 builder.queryType({
   fields: (t) => ({
-    getDoctorById: t.fieldWithInput({
+    getDoctorNameById: t.fieldWithInput({
       input: {
         id: t.input.id({ required: true }),
       },
       type: 'ID',
-      // Add prisma.findUnique to the resolver
-      resolve: async(_root, args) => args.input.id
+      resolve: async(_query, _root, args) => prisma.doctor.findUniqueOrThrow({
+        ...query,
+        where: {
+          id: args.input.id
+        },
+        select: {
+          name: true
+        }
+      })
     })
   })
 });
