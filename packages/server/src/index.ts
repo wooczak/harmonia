@@ -1,36 +1,34 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 const typeDefs = `#graphql
     type Patient {
         id: ID!
         name: String,
-        lastVisit: String
+    }
+    
+    type Doctor {
+        id: ID!,
+        name: String
     }
 
     type Query {
-        patient(id: ID!): Patient,
-        patients: [Patient]
+        patient(id: ID!): Patient
+        doctor(id: ID!): Doctor,
+        patients(doctorId: ID!): [Patient]
     }
 `;
 
-const patients = [
-    {
-        id: '1',
-        name: 'John Krasinski',
-        lastVisit: "2023-06-29",
-    },
-    {
-        id: '2',
-        name: "Brian Novak",
-        lastVisit: "2023-05-12"
-    }
-];
-
 const resolvers = {
     Query: {
-        patients: () => patients,
-        patient: (_: any, args: { id: string; }) => patients.find((patient) => patient.id === args.id)
+        patients: (_: any, args: { id: number }) => prisma.patient.findMany({
+            where: {
+                doctorId: args.id
+            },
+        })
     },
 }
 
