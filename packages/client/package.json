@@ -4,11 +4,24 @@
   "description": "A front-end package for Harmonia app.",
   "main": "index.js",
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kacper Łuczak",
   "license": "ISC",
   "dependencies": {
-    "@harmonia/server": "^0.0.1"
+    "@harmonia/server": "^0.0.1",
+    "next": "^13.5.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.28",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3"
   }
 }
