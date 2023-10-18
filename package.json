@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "app": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "cd packages/client && npm run dev",
     "server:graphql": "cd packages/server/src && ts-node-esm index.ts",
     "server:prismastudio": "cd packages/server && npx prisma studio",
     "prisma:migrate": "cd packages/server && npx prisma migrate dev",
