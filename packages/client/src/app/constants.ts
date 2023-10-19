@@ -1,6 +1,11 @@
+export const Routes = {
+  HOMEPAGE: "/",
+  PATIENTS: "/patients"
+};
+
 export const NavigationTabs = [
-  'Homepage',
-  'Calendar',
-  'Patients',
-  'Settings'
+  'Pacjenci/Pacjentki',
+  'Kalendarz',
+  'Notatki',
+  'Forum'
 ];
