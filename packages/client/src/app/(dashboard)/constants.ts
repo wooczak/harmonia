@@ -1,6 +1,10 @@
 export const Routes = {
   HOMEPAGE: "/",
-  PATIENTS: "/patients"
+  PATIENTS: "/patients",
+  CALENDAR: "/calendar",
+  NOTES: "/notes",
+  ACCOUNT: "/acccount",
+  SETTINGS: "/settings"
 };
 
 export const NavigationTabs = [

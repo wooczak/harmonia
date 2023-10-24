@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { FiSettings } from 'react-icons/fi'
 import { AiOutlineHome } from 'react-icons/ai'
@@ -15,11 +15,13 @@ type TNavigationProps = {
 export default function Navigation({ tabs }: TNavigationProps) {
   const pathname = usePathname()
 
-  const { HOMEPAGE, PATIENTS } = Routes
+  const { HOMEPAGE, PATIENTS, ACCOUNT, SETTINGS } = Routes
 
   return (
     <div className="flex h-[5rem]">
-      <h1 className="font-semibold text-4xl leading-[5rem] ">Harmonia</h1>
+      <h1 className="font-semibold text-4xl leading-[5rem] hover:text-yellow-400 duration-200 ease-in-out">
+        <Link href={HOMEPAGE}>Harmonia</Link>
+      </h1>
       <nav className="flex items-center grow">
         <ul className="flex gap-10 w-full justify-end items-center">
           {pathname !== HOMEPAGE && (
@@ -33,10 +35,14 @@ export default function Navigation({ tabs }: TNavigationProps) {
             </li>
           ))}
           <li>
-            <CgProfile className="" />
+            <Link href={ACCOUNT}>
+              <CgProfile className="" />
+            </Link>
           </li>
           <li>
-            <FiSettings />
+            <Link href={SETTINGS}>
+              <FiSettings />
+            </Link>
           </li>
         </ul>
       </nav>
