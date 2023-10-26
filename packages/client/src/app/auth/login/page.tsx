@@ -45,7 +45,13 @@ export default function Login() {
               message: Error.Password
             }
           })}
-          className="form-input"
+          className={`form-input ${
+            errors.password
+              ? errors.password?.message !== ''
+                ? 'border-red-600'
+                : 'border-green-600'
+              : 'border-slate-300'
+          }`}
         />
         {errors.password && <span>{errors.password.message}</span>}
         <button
