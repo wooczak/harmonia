@@ -12,7 +12,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="max-w-7xl mx-auto">
-        <h1 className="text-5xl font-semibold mt-5 mb-10 text-center">Harmonia</h1>
         {children}
       </body>
     </html>
