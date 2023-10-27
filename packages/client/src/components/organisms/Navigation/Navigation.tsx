@@ -4,9 +4,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { ReactNode, useCallback } from 'react'
 import { AiOutlineHome } from 'react-icons/ai'
-import { Routes } from '../../app/(dashboard)/constants'
-import Title from '../atoms/Title'
 import { renderTabs } from './helpers'
+import { Routes } from 'src/app/(dashboard)/constants'
+import Title from 'src/components/atoms/Title'
 
 export type NavTabs = { [x: string]: string | ReactNode }
 
@@ -18,9 +18,12 @@ type TNavigationProps = {
 export default function Navigation({ tabs, titleContent }: TNavigationProps) {
   const pathname = usePathname()
 
-  const renderNavTabs = useCallback(function(tabs: NavTabs) {
-    return renderTabs(tabs);
-  }, [tabs]);
+  const renderNavTabs = useCallback(
+    function (tabs: NavTabs) {
+      return renderTabs(tabs)
+    },
+    [tabs]
+  )
 
   const { HOMEPAGE } = Routes
 
