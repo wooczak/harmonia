@@ -37,7 +37,7 @@
     "types/**/*",
     "src/**/*",
     ".next/types/**/*.ts"
-, "__tests__/organisms/ Navigation/helpers.test.tsx"  ],
+, "__tests__/organisms/Navigation/helpers.test.tsx"  ],
   "exclude": [
     "node_modules",
     "dist"

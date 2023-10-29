@@ -13,8 +13,9 @@
     "server:prismastudio": "cd packages/server && npx prisma studio",
     "prisma:migrate": "cd packages/server && npx prisma migrate dev",
     "prisma:generate": "cd packages/server && npx prisma generate",
+    "rebuild": "rm -rf node_modules && npm install",
     "build": "tsc -b",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:client": "cd packages/client && npm run test"
   },
   "keywords": [],
   "author": "",
