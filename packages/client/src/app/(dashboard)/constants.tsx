@@ -1,5 +1,6 @@
 import { CgProfile } from 'react-icons/cg'
 import { FiSettings } from 'react-icons/fi'
+import { AiOutlineHome } from 'react-icons/ai';
 
 export const Heading = {
   AppName: 'Harmonia'
@@ -16,6 +17,7 @@ export const Routes = {
 }
 
 export const NavigationTabs = {
+  [Routes.HOMEPAGE]: <AiOutlineHome size={20} />,
   [Routes.PATIENTS]: 'Pacjenci/Pacjentki',
   [Routes.CALENDAR]: 'Kalendarz',
   [Routes.NOTES]: 'Notatki',
