@@ -15,6 +15,7 @@
   "author": "Kacper Łuczak",
   "license": "ISC",
   "dependencies": {
+    "@as-integrations/next": "^3.0.0",
     "@harmonia/server": "^0.0.1",
     "@supabase/auth-helpers-nextjs": "^0.8.1",
     "@supabase/supabase-js": "^2.38.2",
