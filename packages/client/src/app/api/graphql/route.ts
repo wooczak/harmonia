@@ -43,6 +43,6 @@ const handler = startServerAndCreateNextHandler<NextRequest>(server, {
     context: async req => ({ req })
 });
 
-console.log(`Server ready`);
+console.log(`Server ready at localhost:3000/api/graphql`);
 
 export { handler as GET, handler as POST };
