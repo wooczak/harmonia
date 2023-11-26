@@ -13,6 +13,10 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/theme/*": ["src/theme/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/api/*": ["src/app/api/*"],
       "@monorepo/server": [
         "../server/src/index.ts"
       ]
@@ -37,7 +41,7 @@
     "types/**/*",
     "src/**/*",
     ".next/types/**/*.ts"
-, "__tests__/organisms/Navigation/helpers.test.tsx"  ],
+, "__tests__/organisms/Navigation/helpers.test.tsx", "src/middleware.ts"  ],
   "exclude": [
     "node_modules",
     "dist"

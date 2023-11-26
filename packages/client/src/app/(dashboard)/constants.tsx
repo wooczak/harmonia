@@ -12,7 +12,7 @@ export const Routes = {
   CALENDAR: '/calendar',
   NOTES: '/notes',
   CHAT: '/chat',
-  ACCOUNT: '/acccount',
+  ACCOUNT: '/account',
   SETTINGS: '/settings'
 }
 

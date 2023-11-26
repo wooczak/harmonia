@@ -2,15 +2,6 @@
 CREATE TYPE "UserType" AS ENUM ('Doctor', 'Patient');
 
 -- CreateTable
-CREATE TABLE "User" (
-    "id" SERIAL NOT NULL,
-    "name" TEXT NOT NULL,
-    "type" "UserType" NOT NULL,
-
-    CONSTRAINT "User_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "Patient" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,

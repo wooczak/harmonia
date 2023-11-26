@@ -2,8 +2,8 @@
 
 import React from 'react'
 import { Heading, NavigationTabs, Routes } from './constants'
-import Navigation from 'src/components/organisms/Navigation/Navigation'
 import { usePathname } from 'next/navigation'
+import Navigation from '@/components/organisms/Navigation'
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
