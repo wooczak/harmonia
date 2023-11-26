@@ -4,7 +4,7 @@ A full-stack application created with:
  - **Supabase** 💾 - as a placeholder for **PostgreSQL** database, authentication etc.
  - **Prisma ORM** 🏳️‍🌈⃤  - for creating and manipulating SQL models of the database
  - **Apollo Server & Client** 🚀- to create a full-stack connection based on **GraphQL**
- - **Next.js** 💻 - as a great client-side, optimized framework 
+ - **Next.js 13+** 💻 - as a great client-side, optimized framework 
  - **Atomic Design with Storybook** 🎨 - for designing a user-friendly, reusable pieces of UI
 
 
