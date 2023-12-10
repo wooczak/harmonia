@@ -4,8 +4,8 @@ A full-stack application created with:
  - **Supabase** 💾 - as a placeholder for **PostgreSQL** database, authentication etc.
  - **Prisma ORM** 🏳️‍🌈⃤  - for creating and manipulating SQL models of the database
  - **Apollo Server & Client** 🚀- to create a full-stack connection based on **GraphQL**
- - **Next.js** 💻 - as a great client-side, optimized framework 
- - **MaterialUI** 🎨 - for designing a user-friendly interface
+ - **Next.js 13+** 💻 - as a great client-side, optimized framework 
+ - **Atomic Design with Storybook** 🎨 - for designing a user-friendly, reusable pieces of UI
 
 
 ## Setup
@@ -16,18 +16,14 @@ This repository is created in a **monorepository** style which means that all of
 
     npm run app
 
-**Run Prisma Studio and Apollo Server concurrently**
+**Run Prisma Studio on the server**
 
-    npm run server
-  
-**Run Apollo Server only**
-
-    npm run server:graphql
-    // Apollo Server runs on localhost:4000
-    
-   **Run Prisma Studio only**
-
-    npm run server:prisma
+    npm run server:prismastudio
     // Prisma Studio runs on localhost:5555
+  
+**Run Client with Storybook**
+
+    npm run client:withstorybook
+    
 
 
