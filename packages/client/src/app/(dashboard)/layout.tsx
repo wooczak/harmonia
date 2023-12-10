@@ -12,7 +12,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   return (
     <React.Fragment>
-      <Navigation isUserAtHomePage={isUserAtHomePage} tabs={NavigationTabs} titleContent={Heading.AppName} />
+      <Navigation isUserAtHomePage={isUserAtHomePage} tabs={NavigationTabs} />
       {children}
     </React.Fragment>
   )

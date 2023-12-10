@@ -4,18 +4,18 @@ exports[`WHEN the Navigation organism is rendered THEN should render correctly 1
 <nav
   className="flex items-center grow"
 >
-  <h1
-    className="font-black text-4xl text-black  leading-[5rem] hover:text-yellow-300 duration-200 ease-in-out"
+  <a
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onTouchStart={[Function]}
   >
-    <a
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-      onTouchStart={[Function]}
+    <h1
+      className="leading-[5rem]"
     >
       Harmonia
-    </a>
-  </h1>
+    </h1>
+  </a>
   <ul
     className="flex gap-10 w-full justify-end items-center"
   >
@@ -88,7 +88,7 @@ exports[`WHEN the Navigation organism is rendered THEN should render correctly 1
     </li>
     <li>
       <a
-        href="/acccount"
+        href="/account"
         onClick={[Function]}
         onMouseEnter={[Function]}
         onTouchStart={[Function]}

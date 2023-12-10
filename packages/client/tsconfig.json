@@ -41,7 +41,7 @@
     "types/**/*",
     "src/**/*",
     ".next/types/**/*.ts"
-, "__tests__/organisms/Navigation/helpers.test.tsx", "src/middleware.ts"  ],
+, "__tests__/organisms/Navigation/helpers.test.tsx", "src/middleware.ts", "__tests__/atoms/Text/helpers.test.tsx"  ],
   "exclude": [
     "node_modules",
     "dist"

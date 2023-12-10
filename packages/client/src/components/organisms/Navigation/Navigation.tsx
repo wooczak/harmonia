@@ -3,7 +3,9 @@
 import React, { ReactNode, useCallback } from 'react'
 import { renderTabs } from './helpers'
 import { Routes } from 'src/app/(dashboard)/constants'
-import Title from 'src/components/atoms/Title'
+import Link from 'next/link'
+import Text from '@/components/atoms/Text/Text'
+import { TextSize } from '@/theme/types'
 
 export type NavTabs = { [x: string]: string | ReactNode }
 
@@ -15,10 +17,9 @@ export type renderTabsFuncArgs = {
 type TNavigationProps = {
   isUserAtHomePage: boolean
   tabs: NavTabs
-  titleContent: string
 }
 
-export default function Navigation({ isUserAtHomePage: renderHomePageIcon, tabs, titleContent }: TNavigationProps) {
+export default function Navigation({ isUserAtHomePage: renderHomePageIcon, tabs }: TNavigationProps) {
   const renderNavTabs = useCallback(
     function ({ renderHomePageIcon, tabs }: renderTabsFuncArgs) {
       return renderTabs({ renderHomePageIcon, tabs })
@@ -28,7 +29,9 @@ export default function Navigation({ isUserAtHomePage: renderHomePageIcon, tabs,
 
   return (
     <nav className="flex items-center grow">
-      <Title type="Primary" content={titleContent} href={Routes.HOMEPAGE} customStyling="leading-[5rem]"></Title>
+      <Link href={Routes.HOMEPAGE}>
+        <Text size={TextSize.H1} className="leading-[5rem]">Harmonia</Text>
+      </Link>
       <ul className="flex gap-10 w-full justify-end items-center">{renderNavTabs({ renderHomePageIcon, tabs })}</ul>
     </nav>
   )
