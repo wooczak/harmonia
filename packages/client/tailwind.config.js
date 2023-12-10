@@ -16,7 +16,10 @@ module.exports = {
       colors: {
         black: '#202020',
         yellow: '#F2C744',
-        grey: '#F2F0EE'
+        grey: '#F2F0EE',
+        darkGrey: '#686868',
+        errorRedBg: '#F8E6E6',
+        errorRedBorder: '#A40000'
       }
     }
   },
