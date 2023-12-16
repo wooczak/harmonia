@@ -10,7 +10,9 @@ type Story = StoryObj<typeof Input>
 export const InputAtom: Story = {
   args: {
     type: 'password',
-    required: true
+    required: true,
+    isError: true,
+    errorMessage: 'Error message'
   }
 }
 export default meta
