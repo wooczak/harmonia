@@ -1,21 +1,20 @@
+import { ErrorHandling } from '@/components/types'
 import React, { ChangeEvent, useCallback, useState } from 'react'
 
-type ErrorHandling =
-  | {
-      isError: false
-      errorMessage?: never
-    }
-  | {
-      isError: true
-      errorMessage: string
-    }
-
-interface InputProps {
+export interface InputProps {
   type: 'email' | 'password' | 'text'
   required: boolean
+  placeholderText: string
 }
 
-export default function Input({ type, required, isError, errorMessage }: InputProps & ErrorHandling) {
+export default function Input({
+  type,
+  required,
+  placeholderText,
+  isError,
+  errorMessage,
+  ...props
+}: InputProps & ErrorHandling) {
   const [isFirstLetterTyped, setIsFirstLetterTyped] = useState(false)
 
   const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
@@ -26,8 +25,9 @@ export default function Input({ type, required, isError, errorMessage }: InputPr
   return (
     <React.Fragment>
       <input
+        {...props}
         onChange={handleChange}
-        placeholder="Type xxx here"
+        placeholder={placeholderText}
         type={type}
         required={required}
         className={`rounded-lg h-[60px] p-[1.25rem] bg-grey text-darkGrey ${
