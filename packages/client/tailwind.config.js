@@ -20,7 +20,11 @@ module.exports = {
         white: '#FEFEFE',
         darkGrey: '#686868',
         errorRedBg: '#F8E6E6',
-        errorRedBorder: '#A40000'
+        errorRedBorder: '#A40000',
+        btnYellowStandard: '#F2C744',
+        btnYellowHovered: '#FECF09',
+        btnYellowActive: '#F1B500',
+        btnYellowDisabled: '#FFEDB8'
       }
     }
   },

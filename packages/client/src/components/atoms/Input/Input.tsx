@@ -30,7 +30,7 @@ export default function Input({
         placeholder={placeholderText}
         type={type}
         required={required}
-        className={`rounded-lg h-[60px] p-[1.25rem] bg-grey text-darkGrey ${
+        className={`focus:outline-none focus:ring-2 rounded-lg h-[60px] p-[1.25rem] bg-grey text-darkGrey ${
           isFirstLetterTyped && 'text-black opacity-100'
         } opacity-95 hover:opacity-100 cursor-pointer ${
           isFirstLetterTyped && isError && 'bg-errorRedBg border-errorRedBorder'

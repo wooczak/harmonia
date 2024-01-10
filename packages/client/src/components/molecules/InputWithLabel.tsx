@@ -14,10 +14,11 @@ export default function InputWithLabel({
   labelText,
   placeholderText,
   isError,
-  errorMessage
+  errorMessage,
+  ...props
 }: IInputWithLabelProps) {
   return (
-    <div>
+    <div {...props} className="flex flex-col gap-[4px] my-5">
       <label htmlFor={htmlFor}>{labelText}</label>
       <Input type="text" required placeholderText={placeholderText} isError={isError} errorMessage={errorMessage} />
     </div>
