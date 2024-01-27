@@ -5,13 +5,17 @@ import { TextSize } from '@/theme/types'
 import { InputPlaceholder, LoginPageConstants as Texts } from './constants'
 import InputWithLabel from '@/components/molecules/InputWithLabel'
 import Toggle from '@/components/atoms/Toggle'
-import { useState } from 'react'
+import { FormEventHandler, useState } from 'react'
 import Image from 'next/image'
 import Button from '@/components/atoms/Button/Button'
 import { ButtonType } from '@/components/types'
 import Link from 'next/link'
 
-export default function LoginForm() {
+type TLoginFormProps = {
+  handleLogIn: FormEventHandler<HTMLFormElement>
+}
+
+export default function LoginForm({ handleLogIn }: TLoginFormProps) {
   const [rememberMe, setRememberMe] = useState(false);
 
   function handleRememberMeToggle() {
@@ -38,7 +42,7 @@ export default function LoginForm() {
       <Text size={TextSize.BASE} className="mt-4">
         {Texts.SIGN_IN_TEXT}
       </Text>
-      <form>
+      <form onSubmit={handleLogIn}>
         <InputWithLabel
           inputType="email"
           htmlFor="email"

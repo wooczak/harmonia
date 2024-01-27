@@ -1,5 +1,5 @@
 {
-  "name": "@harmonia/graphql-server",
+  "name": "@harmonia/server",
   "version": "0.0.1",
   "description": "",
   "main": "index.ts",

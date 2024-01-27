@@ -8,6 +8,10 @@ interface IButtonProps {
   className?: string
 }
 
-export default function Button({ type, children, className: additionalClasses }: IButtonProps) {
-  return <button className={`${additionalClasses} ${buttonClassNameMap[type]}`}>{children}</button>
+export default function Button({ type, children, className: additionalClasses, ...props }: IButtonProps) {
+  return (
+    <button className={`${additionalClasses} ${buttonClassNameMap[type]}`}  {...props}>
+      {children}
+    </button>
+  )
 }

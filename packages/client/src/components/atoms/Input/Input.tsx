@@ -1,5 +1,6 @@
 import { ErrorHandling } from '@/components/types'
-import React, { ChangeEvent, useCallback, useState } from 'react'
+import useLoginInputStore from '@/store/hooks/useLoginInputStore'
+import React, { ChangeEvent, useState } from 'react'
 
 export interface InputProps {
   type: 'email' | 'password' | 'text'
@@ -16,11 +17,15 @@ export default function Input({
   ...props
 }: InputProps & ErrorHandling) {
   const [isFirstLetterTyped, setIsFirstLetterTyped] = useState(false)
+  const { updateInput } = useLoginInputStore(state => state)
 
-  const handleChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const inputValue = event.target.value || ''
     setIsFirstLetterTyped(inputValue.length > 0)
-  }, [])
+
+    // @ts-ignore
+    updateInput(type, inputValue)
+  }
 
   return (
     <React.Fragment>
