@@ -9,16 +9,17 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Button from '@/components/atoms/Button/Button'
 import { ButtonType } from '@/components/types'
+import Link from 'next/link'
 
 export default function LoginForm() {
-  const [rememberMe, setRememberMe] = useState(false)
+  const [rememberMe, setRememberMe] = useState(false);
 
   function handleRememberMeToggle() {
     setRememberMe(prevState => !prevState)
   }
 
   return (
-    <section className="flex flex-col justify-center px-10">
+    <section className="flex flex-col justify-center px-32">
       <Text className="leading-tight" size={TextSize.H1}>
         {Texts.HEADING_START}
       </Text>
@@ -34,7 +35,9 @@ export default function LoginForm() {
           className="relative left-14"
         />
       </div>
-      <Text size={TextSize.BASE} className="mt-4">{Texts.SIGN_IN_TEXT}</Text>
+      <Text size={TextSize.BASE} className="mt-4">
+        {Texts.SIGN_IN_TEXT}
+      </Text>
       <form>
         <InputWithLabel
           inputType="email"
@@ -54,9 +57,19 @@ export default function LoginForm() {
           <Toggle activated={rememberMe} onClick={handleRememberMeToggle} />
           <Text size={TextSize.SMALL}>{Texts.REMEMBER_ME}</Text>
         </div>
-        <Button className="w-full my-4" type={ButtonType.CALL_TO_ACTION}>{Texts.LOG_IN}</Button>
-        <Text className="underline font-medium" size={TextSize.SMALL}>{Texts.FORGOT_PASSWORD}</Text>
+        <Button className="w-full my-4" type={ButtonType.CALL_TO_ACTION}>
+          {Texts.LOG_IN}
+        </Button>
       </form>
+      <Text className="underline font-medium" size={TextSize.SMALL}>
+        <Link href="/auth/forgot-password">{Texts.FORGOT_PASSWORD}</Link>
+      </Text>
+      <Text className="w-4/5 place-self-center text-center mt-14 before:inline-block before:w-full before:h-[1px] before:bg-black" size={TextSize.SMALL}>
+        {`${Texts.NO_ACCOUNT} `}
+        <Link className="underline" href="/auth/register">
+          {Texts.REGISTER_NOW}
+        </Link>
+      </Text>
     </section>
   )
 }

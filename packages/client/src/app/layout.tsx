@@ -1,5 +1,4 @@
 import './globals.css'
-import { Providers } from './providers'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,8 +11,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="max-w-7xl mx-auto">
-        <Providers>{children}</Providers>
+      <body className="max-w-screen-2xl mx-auto">
+        {children}
       </body>
     </html>
   )
