@@ -1,8 +1,11 @@
-'use client';
+'use client'
 
 import Image from 'next/image'
 import LoginForm from '@/components/organisms/LoginForm/LoginForm'
 import useLogIn from '@/hooks/useLogIn'
+
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer } from 'react-toastify'
 
 export default function Login() {
   const { handleLogIn } = useLogIn()
@@ -18,6 +21,18 @@ export default function Login() {
           height={491}
         />
       </aside>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </main>
   )
 }

@@ -1,27 +1,24 @@
 import useLoginInputStore from '@/store/hooks/useLoginInputStore'
-import { createBrowserClient } from '@supabase/ssr'
-import { useEffect } from 'react'
+import { toast } from 'react-toastify';
+import useSupabaseClient from './useSupabaseClient';
 
 export default function useLogIn() {
-  const { emailInput, passwordInput } = useLoginInputStore(store => store)
-
-  const supabase = createBrowserClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
-
-  useEffect(() => {
-    console.log('email: ', emailInput, ' password: ', passwordInput)
-  }, [emailInput, passwordInput])
+  const supabase = useSupabaseClient();
+  const { emailInput, passwordInput } = useLoginInputStore(store => store);
 
   async function handleLogIn(e: any) {
     e.preventDefault();
 
-    // TODO: change this to signIn + create a separate hook and UI for signUp
-    await supabase.auth.signUp({
+    const { error } =  await supabase.auth.signInWithPassword({
       email: emailInput,
       password: passwordInput
-    })
+    });
+
+    if (error) {
+      toast.error(`${error.message}`);
+    }
+
+    
   }
 
   return { handleLogIn }

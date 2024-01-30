@@ -1,6 +1,13 @@
+'use client';
+
+import { QueryClient, QueryClientProvider } from 'react-query'
 import './globals.css'
+import useSupabaseClient from '@/hooks/useSupabaseClient';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const queryClient = new QueryClient();
+  useSupabaseClient();  
+
   return (
     <html>
       <head>
@@ -12,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="max-w-screen-2xl mx-auto">
-        {children}
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
       </body>
     </html>
   )
